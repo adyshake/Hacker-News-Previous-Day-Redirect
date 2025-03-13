@@ -1,7 +1,10 @@
 if (window.location.hostname === "news.ycombinator.com" && !window.location.href.includes("front?day")) {
-    let today = new Date();
-    today.setDate(today.getDate() - 1); // Get previous day
-    let formattedDate = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+    let now = new Date();
+    let localOffset = now.getTimezoneOffset() * 60000; // Convert offset to milliseconds
+    let localDate = new Date(now.getTime() - localOffset); // Convert to local time
+
+    localDate.setDate(localDate.getDate() - 1); // Get previous day in local time
+    let formattedDate = localDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
     let hnUrl = `https://news.ycombinator.com/front?day=${formattedDate}`;
     
     window.location.replace(hnUrl);
