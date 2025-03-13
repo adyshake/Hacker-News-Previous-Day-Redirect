@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Hacker News Previous Day Redirect",
-    "version": "1.3",
+    "version": "1.4",
     "description": "Redirects to the Hacker News front page from the previous day, removes the date header, and limits to top 20 posts by upvotes.",
     "icons": {
         "48": "icons/hn-48.png"
